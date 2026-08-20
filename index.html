@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lista de precios</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f2eb;
+            color: #222;
+        }
+
+        .contenedor {
+            max-width: 500px;
+            margin: auto;
+            padding: 25px 18px 40px;
+        }
+
+        .encabezado {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 38px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .subtitulo {
+            margin-top: 8px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .producto {
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .nombre {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .detalle {
+            font-size: 13px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        .precio {
+            font-size: 19px;
+            font-weight: bold;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        .nota {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="encabezado">
+        <div class="logo">WAMPU</div>
+        <div class="subtitulo">
+            Productos disponibles
+        </div>
+    </div>
+
+
+    <!-- PRODUCTOS -->
+
+    <div class="producto">
+        <div>
+            <div class="nombre">Cerveza Wampu</div>
+            <div class="detalle">Botella 330 ml</div>
+        </div>
+
+        <div class="precio">$2,50</div>
+    </div>
+
+
+    <div class="producto">
+        <div>
+            <div class="nombre">Agua</div>
+            <div class="detalle">Botella</div>
+        </div>
+
+        <div class="precio">$1,00</div>
+    </div>
+
+
+    <div class="producto">
+        <div>
+            <div class="nombre">Helado</div>
+            <div class="detalle">Unidad</div>
+        </div>
+
+        <div class="precio">$1,50</div>
+    </div>
+
+
+    <div class="nota">
+        Gracias por tu compra.
+    </div>
+
+</div>
+
+</body>
+</html>
