@@ -3,102 +3,158 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Minibar | Wampu</title>
 
-    <!-- Archivo de estilos -->
-    <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 
 <body>
 
-    <div class="contenedor">
 
-        <!-- ENCABEZADO -->
+    <!-- ENCABEZADO -->
 
-        <header class="encabezado">
+    <header>
 
-            <div class="logo">
-                WAMPU
-            </div>
+        <h1>WAMPU</h1>
 
-            <div class="subtitulo">
-                Minibar del alojamiento
-            </div>
+        <p>
+            Minibar del alojamiento
+        </p>
 
-        </header>
+    </header>
 
 
-        <!-- PRODUCTOS -->
+    <!-- BEBIDAS -->
 
-        <main id="minibar">
+    <section>
 
-            <!--
-                Los productos serán
-                cargados automáticamente
-                mediante JavaScript.
-            -->
-
-        </main>
+        <h2>🥤 Bebidas</h2>
 
 
-        <!-- TOTAL -->
+        <!-- CORONA UNIDAD -->
 
-        <div class="total">
+        <div>
 
-            Total:
-            $<span id="total">0,00</span>
+            <h3>Corona</h3>
+
+            <p>
+                Cerveza · Unidad
+            </p>
+
+            <strong>
+                $2,00
+            </strong>
 
         </div>
 
 
-        <!-- WHATSAPP -->
+        <!-- CORONA SIX PACK -->
+
+        <div>
+
+            <h3>Corona Six Pack</h3>
+
+            <p>
+                Cerveza · 6 unidades
+            </p>
+
+            <strong>
+                $10,00
+            </strong>
+
+        </div>
+
+
+        <!-- COCA COLA -->
+
+        <div>
+
+            <h3>Coca Cola</h3>
+
+            <p>
+                Bebida gaseosa
+            </p>
+
+            <strong>
+                $0,50
+            </strong>
+
+        </div>
+
+
+        <!-- AGUA -->
+
+        <div>
+
+            <h3>Agua</h3>
+
+            <p>
+                Botella
+            </p>
+
+            <strong>
+                $0,60
+            </strong>
+
+        </div>
+
+
+        <!-- FUZE TEA -->
+
+        <div>
+
+            <h3>Fuze Tea</h3>
+
+            <p>
+                Té listo para beber
+            </p>
+
+            <strong>
+                $0,75
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHATSAPP -->
+
+    <section>
 
         <a
-            class="whatsapp"
-            id="boton-whatsapp"
-            href="#"
+            href="https://wa.me/593962684773?text=Hola%2C%20quisiera%20realizar%20un%20pedido%20del%20minibar."
+            target="_blank"
         >
+
             📲 Pedir por WhatsApp
+
         </a>
 
+    </section>
 
-        <!-- NOTA -->
 
-        <div class="nota">
+    <!-- NOTA -->
 
-            Selecciona los productos y
-            las cantidades que deseas.<br>
+    <footer>
 
+        <p>
+            Toma el producto que desees y realiza tu pedido.
+            <br>
             Gracias por tu compra 😊
+        </p>
 
-        </div>
-
-
-        <!-- PIE -->
-
-        <div class="pie">
-
+        <small>
             Wampu · Productos para huéspedes
+        </small>
 
-        </div>
+    </footer>
 
-    </div>
-
-
-    <!--
-        ARCHIVOS JAVASCRIPT
-
-        Primero cargamos los productos
-        y después la lógica de la página.
-    -->
-
-    <script src="data/productos.js"></script>
-
-    <script src="js/app.js"></script>
 
 </body>
 
