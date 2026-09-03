@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,152 +10,399 @@
 
     <title>Minibar | Wampu</title>
 
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #f4f1ea;
+
+            color: #222;
+
+        }
+
+
+        .contenedor {
+
+            width: 100%;
+
+            max-width: 520px;
+
+            margin: auto;
+
+            padding: 25px 18px 40px;
+
+        }
+
+
+        /* ENCABEZADO */
+
+        .encabezado {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .logo {
+
+            font-size: 42px;
+
+            font-weight: 800;
+
+            letter-spacing: 5px;
+
+        }
+
+
+        .subtitulo {
+
+            margin-top: 8px;
+
+            font-size: 15px;
+
+            color: #666;
+
+        }
+
+
+        /* SECCIONES */
+
+        .seccion {
+
+            margin-top: 25px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .seccion h2 {
+
+            font-size: 18px;
+
+            margin: 0;
+
+            padding-bottom: 8px;
+
+            border-bottom: 2px solid #222;
+
+        }
+
+
+        /* PRODUCTOS */
+
+        .producto {
+
+            background: white;
+
+            border-radius: 14px;
+
+            padding: 16px 18px;
+
+            margin-top: 10px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+        }
+
+
+        .nombre {
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+        }
+
+
+        .descripcion {
+
+            font-size: 13px;
+
+            color: #777;
+
+            margin-top: 4px;
+
+        }
+
+
+        .precio {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+
+        }
+
+
+        /* WHATSAPP */
+
+        .whatsapp {
+
+            display: block;
+
+            margin-top: 30px;
+
+            padding: 15px;
+
+            background: #25D366;
+
+            color: white;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+        }
+
+
+        /* NOTA */
+
+        .nota {
+
+            text-align: center;
+
+            margin-top: 22px;
+
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* PIE */
+
+        .pie {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            font-size: 12px;
+
+            color: #999;
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
+<div class="contenedor">
+
+
     <!-- ENCABEZADO -->
 
-    <header>
+    <header class="encabezado">
 
-        <h1>WAMPU</h1>
+        <div class="logo">
+            WAMPU
+        </div>
 
-        <p>
+        <div class="subtitulo">
             Minibar del alojamiento
-        </p>
+        </div>
 
     </header>
 
 
+
     <!-- BEBIDAS -->
 
-    <section>
+    <section class="seccion">
 
         <h2>🥤 Bebidas</h2>
 
 
-        <!-- CORONA UNIDAD -->
+        <!-- CORONA -->
 
-        <div>
+        <div class="producto">
 
-            <h3>Corona</h3>
+            <div>
 
-            <p>
-                Cerveza · Unidad
-            </p>
+                <div class="nombre">
+                    Corona
+                </div>
 
-            <strong>
+                <div class="descripcion">
+                    Unidad
+                </div>
+
+            </div>
+
+            <div class="precio">
                 $2,00
-            </strong>
+            </div>
 
         </div>
 
 
-        <!-- CORONA SIX PACK -->
+        <div class="producto">
 
-        <div>
+            <div>
 
-            <h3>Corona Six Pack</h3>
+                <div class="nombre">
+                    Corona
+                </div>
 
-            <p>
-                Cerveza · 6 unidades
-            </p>
+                <div class="descripcion">
+                    Six Pack
+                </div>
 
-            <strong>
+            </div>
+
+            <div class="precio">
                 $10,00
-            </strong>
+            </div>
 
         </div>
 
 
         <!-- COCA COLA -->
 
-        <div>
+        <div class="producto">
 
-            <h3>Coca Cola</h3>
+            <div>
 
-            <p>
-                Bebida gaseosa
-            </p>
+                <div class="nombre">
+                    Coca Cola
+                </div>
 
-            <strong>
+                <div class="descripcion">
+                    Bebida gaseosa
+                </div>
+
+            </div>
+
+            <div class="precio">
                 $0,50
-            </strong>
+            </div>
 
         </div>
 
 
         <!-- AGUA -->
 
-        <div>
+        <div class="producto">
 
-            <h3>Agua</h3>
+            <div>
 
-            <p>
-                Botella
-            </p>
+                <div class="nombre">
+                    Agua
+                </div>
 
-            <strong>
+                <div class="descripcion">
+                    Botella
+                </div>
+
+            </div>
+
+            <div class="precio">
                 $0,60
-            </strong>
+            </div>
 
         </div>
 
 
         <!-- FUZE TEA -->
 
-        <div>
+        <div class="producto">
 
-            <h3>Fuze Tea</h3>
+            <div>
 
-            <p>
-                Té listo para beber
-            </p>
+                <div class="nombre">
+                    Fuze Tea
+                </div>
 
-            <strong>
+                <div class="descripcion">
+                    Té listo para beber
+                </div>
+
+            </div>
+
+            <div class="precio">
                 $0,75
-            </strong>
+            </div>
 
         </div>
 
     </section>
 
 
+
     <!-- WHATSAPP -->
 
-    <section>
+    <a
+        class="whatsapp"
+        href="https://wa.me/593962684773?text=Hola%2C%20quisiera%20realizar%20un%20pedido%20del%20minibar."
+        target="_blank"
+    >
 
-        <a
-            href="https://wa.me/593962684773?text=Hola%2C%20quisiera%20realizar%20un%20pedido%20del%20minibar."
-            target="_blank"
-        >
+        📲 Pedir por WhatsApp
 
-            📲 Pedir por WhatsApp
+    </a>
 
-        </a>
-
-    </section>
 
 
     <!-- NOTA -->
 
-    <footer>
+    <div class="nota">
 
-        <p>
-            Toma el producto que desees y realiza tu pedido.
-            <br>
-            Gracias por tu compra 😊
-        </p>
+        Toma el producto que desees y realiza tu pedido.
+        <br>
 
-        <small>
-            Wampu · Productos para huéspedes
-        </small>
+        Gracias por tu compra 😊
 
-    </footer>
+    </div>
+
+
+
+    <!-- PIE -->
+
+    <div class="pie">
+
+        Wampu · Productos para huéspedes
+
+    </div>
+
+
+</div>
 
 
 </body>
 
 </html>
+```
