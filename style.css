@@ -165,3 +165,10 @@ body {
     font-size: 12px;
     color: #999;
 }
+
+/* Estilo para cuando el botón llega al límite de stock */
+.btn-cantidad.sumar:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background-color: #cccccc; /* O un color neutro que prefieras */
+}

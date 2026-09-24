@@ -4,13 +4,13 @@ import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/fireb
 
 // Tus credenciales oficiales de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDzOrsyulIroMNgo-tpMFtv8p8nelLiLrs",
-  authDomain: "wampu-productos.firebaseapp.com",
-  projectId: "wampu-productos",
-  storageBucket: "wampu-productos.firebasestorage.app",
-  messagingSenderId: "1084885545588",
-  appId: "1:1084885545588:web:a7f884388a902b689cd721",
-  measurementId: "G-GK3S4QBBD9"
+    apiKey: "AIzaSyDzOrsyulIroMNgo-tpMFtv8p8nelLiLrs",
+    authDomain: "wampu-productos.firebaseapp.com",
+    projectId: "wampu-productos",
+    storageBucket: "wampu-productos.firebasestorage.app",
+    messagingSenderId: "1084885545588",
+    appId: "1:1084885545588:web:a7f884388a902b689cd721",
+    measurementId: "G-GK3S4QBBD9"
 };
 
 // Inicializar Firebase Firestore una sola vez
@@ -90,16 +90,39 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Configurar los botones de sumar para todos los productos correctamente
+// Configurar los botones de sumar con límite de stock y desvanecimiento visual
     productos.forEach(prod => {
         const btnSumar = prod.querySelector('.sumar');
         const cantidadEl = prod.querySelector('.cantidad');
+        
+        // Lee el límite de stock de cada producto en el HTML (si no se define, toma 10 por defecto)
+        const maxStock = parseInt(prod.getAttribute('data-stock')) || 1;
+
+        // Función interna para actualizar el estado visual del botón según el stock actual
+        function actualizarEstadoBoton() {
+            let cantidad = parseInt(cantidadEl.textContent) || 0;
+            if (cantidad >= maxStock) {
+                btnSumar.disabled = true;
+                btnSumar.style.opacity = "0.3"; // Se desvanece
+            } else {
+                btnSumar.disabled = false;
+                btnSumar.style.opacity = "1";   // Visible y activo
+            }
+        }
+
+        // Ejecutar al iniciar la página por si ya hay datos cargados desde Firebase
+        actualizarEstadoBoton();
 
         if (btnSumar && cantidadEl) {
             btnSumar.addEventListener('click', () => {
                 let cantidad = parseInt(cantidadEl.textContent) || 0;
-                cantidadEl.textContent = cantidad + 1;
-                actualizarTotal();
+
+                // Solo suma si la cantidad actual es menor al stock físico disponible
+                if (cantidad < maxStock) {
+                    cantidadEl.textContent = cantidad + 1;
+                    actualizarTotal();
+                    actualizarEstadoBoton(); // Comprueba si debe desvanecerse tras sumar
+                }
             });
         }
     });
