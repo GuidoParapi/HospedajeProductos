@@ -93,21 +93,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     productos.forEach(prod => {
         const btnSumar = prod.querySelector('.sumar');
-        const btnRestar = prod.querySelector('.restar');
         const cantidadEl = prod.querySelector('.cantidad');
 
         btnSumar.addEventListener('click', () => {
             let cantidad = parseInt(cantidadEl.textContent);
             cantidadEl.textContent = cantidad + 1;
             actualizarTotal();
-        });
-
-        btnRestar.addEventListener('click', () => {
-            let cantidad = parseInt(cantidadEl.textContent);
-            if (cantidad > 0) {
-                cantidadEl.textContent = cantidad - 1;
-                actualizarTotal();
-            }
         });
     });
 });
