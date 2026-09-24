@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function actualizarTotal() {
         let totalGeneral = 0;
-        let mensajePedido = `¡Hola Guido! 👋 Te comparto por aquí el detalle de lo que voy consumiendo del minibar hasta el momento:%0A%0A`;
+        let mensajePedido = `¡Hola Guido! 👋 Te comparto por aquí el detalle de lo que he consumiendo del minibar hasta el momento:%0A%0A`;
         let hayProductos = false;
         let estadoConsumo = {};
 
