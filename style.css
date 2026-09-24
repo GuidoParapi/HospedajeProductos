@@ -7,6 +7,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f5f5;
     color: #222;
+    padding-bottom: 80px; /* Espacio para que la barra flotante no tape el pie */
 }
 
 .contenedor {
@@ -47,7 +48,6 @@ body {
     border-bottom: 2px solid #222;
 }
 
-/* ESPACIO ENTRE CATEGORÍAS */
 .seccion h2:not(:first-child) {
     margin-top: 35px;
 }
@@ -56,7 +56,7 @@ body {
 .producto {
     background: white;
     border-radius: 14px;
-    padding: 16px 18px;
+    padding: 14px 18px;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
@@ -75,17 +75,71 @@ body {
     margin-top: 4px;
 }
 
-.precio {
-    font-size: 18px;
-    font-weight: bold;
-    white-space: nowrap;
+.derecha {
+    text-align: right;
 }
 
-/* WHATSAPP */
+.precio {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* CONTROLES DE CANTIDAD (+ / -) */
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.btn-cantidad {
+    background: #222;
+    color: white;
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cantidad:active {
+    transform: scale(0.9);
+}
+
+.cantidad {
+    font-size: 15px;
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
+}
+
+/* CAJA TOTAL Y WHATSAPP */
+.caja-total {
+    margin-top: 30px;
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.texto-total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
 .whatsapp {
     display: block;
-    margin-top: 30px;
-    padding: 15px;
+    padding: 14px;
     background: #25D366;
     color: white;
     text-align: center;
