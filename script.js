@@ -17,9 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Detectar la habitación desde la URL (ejemplo: ?hab=101)
-const urlParams = new URLSearchParams(window.location.search);
-const habitacionId = urlParams.get('hab') || 'general';
+// ID fijo para el departamento único
+const departamentoId = "departamento-principal";
 
 document.addEventListener('DOMContentLoaded', async () => {
     const productos = document.querySelectorAll('.producto');
@@ -27,8 +26,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const whatsappBtn = document.getElementById('whatsapp-btn');
     const numeroWhatsApp = "593962684773";
 
-    // Referencia al documento de esta habitación específica en la base de datos
-    const docRef = doc(db, "consumos", habitacionId);
+    // Referencia al documento de este departamento en la base de datos
+    const docRef = doc(db, "consumos", departamentoId);
 
     // Cargar consumos previos desde la nube al abrir la página
     try {
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function actualizarTotal() {
         let totalGeneral = 0;
-        let mensajePedido = `Hola, quisiera realizar el pedido del minibar (Habitación ${habitacionId}):%0A`;
+        let mensajePedido = `¡Hola Guido! 👋 Te comparto por aquí el detalle de lo que voy consumiendo del minibar hasta el momento:%0A%0A`;
         let hayProductos = false;
         let estadoConsumo = {};
 
@@ -60,7 +59,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const nombre = prod.getAttribute('data-nombre');
             const precio = parseFloat(prod.getAttribute('data-precio'));
             const cantidadEl = prod.querySelector('.cantidad');
-            const cantidad = parseInt(cantidadEl.textContent);
+            const cantidad = parseInt(cantidadEl.textContent) || 0;
 
             estadoConsumo[id] = cantidad;
 
@@ -68,16 +67,16 @@ document.addEventListener('DOMContentLoaded', async () => {
                 hayProductos = true;
                 const subtotal = precio * cantidad;
                 totalGeneral += subtotal;
-                mensajePedido += `- ${cantidad}x ${nombre} ($${subtotal.toFixed(2)})%0A`;
+                mensajePedido += `• ${cantidad}x ${nombre} ($${subtotal.toFixed(2)})%0A`;
             }
         });
 
         if (hayProductos) {
-            mensajePedido += `%0A*Total a pagar: $${totalGeneral.toFixed(2)}*`;
+            mensajePedido += `%0A*Total acumulado: $${totalGeneral.toFixed(2)}*%0A%0A¡Muchas gracias! Lo puedo dejar cancelado al final de mi estadía. 😊`;
             whatsappBtn.style.pointerEvents = "auto";
             whatsappBtn.style.opacity = "1";
         } else {
-            mensajePedido = `Hola, quisiera consultar el minibar de la habitación ${habitacionId}.`;
+            mensajePedido = `¡Hola Guido! 👋 Aquí consultando el minibar del departamento. ¡Todo en orden!`;
             whatsappBtn.style.pointerEvents = "none";
             whatsappBtn.style.opacity = "0.5";
         }
@@ -91,14 +90,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    // Configurar los botones de sumar para todos los productos correctamente
     productos.forEach(prod => {
         const btnSumar = prod.querySelector('.sumar');
         const cantidadEl = prod.querySelector('.cantidad');
 
-        btnSumar.addEventListener('click', () => {
-            let cantidad = parseInt(cantidadEl.textContent);
-            cantidadEl.textContent = cantidad + 1;
-            actualizarTotal();
-        });
+        if (btnSumar && cantidadEl) {
+            btnSumar.addEventListener('click', () => {
+                let cantidad = parseInt(cantidadEl.textContent) || 0;
+                cantidadEl.textContent = cantidad + 1;
+                actualizarTotal();
+            });
+        }
     });
 });
