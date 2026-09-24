@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         if (hayProductos) {
-            mensajePedido += `%0A*Total acumulado: $${totalGeneral.toFixed(2)}*%0A%0A¡Muchas gracias! Lo puedo dejar cancelado al final de mi estadía. 😊`;
+            mensajePedido += `%0A*Total acumulado: $${totalGeneral.toFixed(2)}*%0A`;
             whatsappBtn.style.pointerEvents = "auto";
             whatsappBtn.style.opacity = "1";
         } else {
