@@ -7,7 +7,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f5f5;
     color: #222;
-    padding-bottom: 80px; /* Espacio para que la barra flotante no tape el pie */
+    padding-bottom: 40px;
 }
 
 .contenedor {
@@ -37,7 +37,7 @@ body {
 
 /* SECCIONES */
 .seccion {
-    margin-top: 35px;
+    margin-top: 25px;
     margin-bottom: 12px;
 }
 
@@ -80,61 +80,18 @@ body {
 }
 
 .precio {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 6px;
+    color: #2e7d32; /* Tono verde agradable para precios */
 }
 
-/* CONTROLES DE CANTIDAD (+ / -) */
-.controles {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f0f0f0;
-    padding: 4px 10px;
-    border-radius: 20px;
-}
-
-.btn-cantidad {
-    background: #222;
-    color: white;
-    border: none;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-cantidad:active {
-    transform: scale(0.9);
-}
-
-.cantidad {
-    font-size: 15px;
-    font-weight: bold;
-    min-width: 15px;
-    text-align: center;
-}
-
-/* CAJA TOTAL Y WHATSAPP */
+/* CAJA WHATSAPP */
 .caja-total {
     margin-top: 30px;
     background: white;
     padding: 18px;
     border-radius: 14px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.texto-total {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 12px;
-    text-align: center;
 }
 
 .whatsapp {
@@ -164,11 +121,4 @@ body {
     margin-top: 30px;
     font-size: 12px;
     color: #999;
-}
-
-/* Estilo para cuando el botón llega al límite de stock */
-.btn-cantidad.sumar:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    background-color: #cccccc; /* O un color neutro que prefieras */
 }
